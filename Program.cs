@@ -1,3 +1,5 @@
+using MyFirstDotnetAPI.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,7 +9,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IHelloWorldService, HelloWorldService>(); // Es una buena practica
-//builder.Services.AddScoped<IHelloWorldService>(p => new HelloWorldService()); // Es otra forma de inyectar pero no es muy comun 
+//builder.Services.AddScoped<IHelloWorldService>(p => new HelloWorldService()); // Es otra forma de inyectar pero no es muy comun, tambien se puede usar para enviar un parametro
+builder.Services.AddScoped<ICategoriaService, CategoriaService>();
+builder.Services.AddScoped<ITareaService, TareaService>();
 
 var app = builder.Build();
 

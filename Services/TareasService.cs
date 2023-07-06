@@ -1,7 +1,7 @@
 using MyFirstDotnetAPI.Models;
 
 namespace MyFirstDotnetAPI.Services;
-public class TareaService
+public class TareaService : ITareaService
 {
     TareasContext context;
 
